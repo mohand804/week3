@@ -16,5 +16,5 @@ abstract class LoginApiService {
     ParseErrorLogger? errorLogger,
   }) = _LoginApiService;
   @POST(LoginApiConstants.login)
-  Future<LoginResponseModel> login(LoginRequestModel request);
+  Future<LoginResponseModel> login(@Body() LoginRequestModel request);
 }

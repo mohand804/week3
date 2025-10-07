@@ -44,8 +44,28 @@ class TextStyleManager {
     color: Colors.black,
   );
   static const TextStyle font15BlackMedium = TextStyle(
-    fontWeight: FontWeightHelper.medium,
+    fontWeight: FontWeightHelper.semiBold,
     fontSize: 15,
     color: Colors.black,
+  );
+  static const TextStyle font15kGoogleRedMedium = TextStyle(
+    fontWeight: FontWeightHelper.medium,
+    fontSize: 15,
+    color: ColorsManager.kGoogleRed,
+  );
+  static const TextStyle font15kGrayBlueDarkRegular = TextStyle(
+    fontWeight: FontWeightHelper.regular,
+    fontSize: 15,
+    color: ColorsManager.grayBlueDark,
+  );
+  static const TextStyle font17kDarkGrayMedium = TextStyle(
+    fontWeight: FontWeightHelper.medium,
+    fontSize: 17,
+    color: ColorsManager.darkGray,
+  );
+  static const TextStyle font13kDarkGrayRegular = TextStyle(
+    fontWeight: FontWeightHelper.regular,
+    fontSize: 13,
+    color: ColorsManager.darkGray,
   );
 }
