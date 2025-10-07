@@ -1,6 +1,8 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:week3/core/helpers/shared_pref_helpr.dart';
+import 'package:week3/core/routing/routes.dart';
 import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:week3/features/auth/login/logic/cubit/login_state.dart';
 
@@ -19,7 +21,8 @@ class LoginBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         state.whenOrNull(
           loginSuccess: (login) {
-            // Navigator.pushNamed(context, Routes.checkEmailScreen);
+            Navigator.pushNamed(context, Routes.homeScreen);
+            SharedPrefHelper.setString('token', login.accessToken);
           },
           loginFailure: (error) {
             Flushbar(

@@ -6,6 +6,8 @@ import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:week3/features/auth/login/ui/login_screen.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/sign_up/ui/sign_up_screen.dart';
+import 'package:week3/features/home/logic/cubit/categories_cubit.dart';
+import 'package:week3/features/home/logic/cubit/products_cubit.dart';
 import 'package:week3/features/home/ui/home_screen.dart';
 import 'package:week3/features/onboarding/onboarding_screen.dart';
 
@@ -29,7 +31,17 @@ class AppRouter {
           ),
         );
       case Routes.homeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<CategoriesCubit>()..getCategories(),
+              ),
+              BlocProvider(create: (context) => getIt<ProductsCubit>()),
+            ],
+            child: const HomeScreen(),
+          ),
+        );
       default:
         return null;
     }

@@ -9,4 +9,5 @@ class ColorsManager {
   static const Color darkGray = Color(0xFF1D1E20);
   static const Color successGreen = Color(0xFF34C759);
   static const Color kGoogleRed = Color(0xFFEA4335);
+  static const Color veryLightGray = Color(0xFFF2F2F2);
 }

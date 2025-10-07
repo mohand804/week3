@@ -11,7 +11,11 @@ class LoginRepo {
     try {
       final response = await _loginApiService.login(request);
       return ApiResult.success(response);
-    } catch (e) {
+    } catch (e, stackTrace) {
+      // ignore: avoid_print
+      print('❌ Error while parsing LoginResponseModel: $e');
+      // ignore: avoid_print
+      print('📌 Stack trace: $stackTrace');
       return ApiResult.failure(ApiErrorHandler.handle(e));
     }
   }

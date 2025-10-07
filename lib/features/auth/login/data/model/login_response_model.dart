@@ -4,11 +4,11 @@ part 'login_response_model.g.dart';
 
 @JsonSerializable()
 class LoginResponseModel {
-  final String token;
-  final String refreshToken;
+  final String accessToken;
   final String expiresAtUtc;
+  final String refreshToken;
   LoginResponseModel({
-    required this.token,
+    required this.accessToken,
     required this.refreshToken,
     required this.expiresAtUtc,
   });

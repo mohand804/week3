@@ -1,14 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:week3/core/helpers/constant.dart';
 import 'package:week3/core/helpers/spacing.dart';
-import 'package:week3/core/theming/colors.dart';
-import 'package:week3/core/theming/styles.dart';
-import 'package:week3/features/home/ui/widget/circle_container.dart';
+import 'package:week3/features/home/data/model/products_requset_model.dart';
+import 'package:week3/features/home/logic/cubit/products_cubit.dart';
+import 'package:week3/features/home/ui/widget/categories_bloc_builder.dart';
+import 'package:week3/features/home/ui/widget/home_headr.dart';
+import 'package:week3/features/home/ui/widget/product_bloc_builder.dart';
+import 'package:week3/features/home/ui/widget/search_bar_with_voice_button.dart';
+import 'package:week3/features/home/ui/widget/section_header.dart';
+import 'package:week3/features/home/ui/widget/user_greeting.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<ProductsCubit>().getProducts(
+      ProductsRequsetModel(page: 1, pageSize: 10),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,94 +33,24 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CircleContainer(
-                    child: Padding(
-                      padding: EdgeInsets.all(9.w),
-                      child: SvgPicture.asset(
-                        '${AppConstants.svgPath}menu.svg',
-                      ),
-                    ),
-                  ),
-                  CircleContainer(
-                    child: Padding(
-                      padding: EdgeInsets.all(9.w),
-                      child: SvgPicture.asset('${AppConstants.svgPath}Bag.svg'),
-                    ),
-                  ),
-                ],
-              ),
-              verticalSpace(16),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Hello',
-                      style: TextStyleManager.font28GrayBlueDarkSemiBold,
-                    ),
-                    Text(
-                      'Welcome to Laza.',
-                      style: TextStyleManager.font15GrayBlueDarkRegular,
-                    ),
-                  ],
-                ),
-              ),
-              verticalSpace(16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.w),
-                    height: 50.h,
-                    width: 275.w,
-                    decoration: BoxDecoration(
-                      color: ColorsManager.lightBlueGray,
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: Row(
-                      children: [
-                        SvgPicture.asset('${AppConstants.svgPath}Search.svg'),
-                        horizontalSpace(10),
-                        Text(
-                          'Search...',
-                          style: TextStyleManager.font15kGrayBlueDarkRegular,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 50.h,
-                    width: 50.w,
-                    padding: EdgeInsets.all(12.w),
-                    decoration: BoxDecoration(
-                      color: ColorsManager.mainColor,
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    child: SvgPicture.asset('${AppConstants.svgPath}Voice.svg'),
-                  ),
-                ],
-              ),
-              verticalSpace(16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Choose Category',
-                    style: TextStyleManager.font17kDarkGrayMedium,
-                  ),
-                  Text(
-                    'View All',
-                    style: TextStyleManager.font15kGrayBlueDarkRegular,
-                  ),
-                ],
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                HomeHeadr(),
+                verticalSpace(16),
+                UserGreeting(),
+                verticalSpace(16),
+                SearchBarWithVoiceButton(),
+                verticalSpace(16),
+                SectionHeader(title: 'Choose Category', subtitle: 'View All'),
+                verticalSpace(16),
+                CategoriesBlocBuilder(),
+                verticalSpace(16),
+                SectionHeader(title: 'Featured Products', subtitle: 'View All'),
+                verticalSpace(16),
+                ProductBlocBuilder(),
+              ],
+            ),
           ),
         ),
       ),
