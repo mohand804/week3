@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:week3/core/di/dependency_injection.dart';
 import 'package:week3/core/routing/routes.dart';
-import 'package:week3/features/auth/sign_up/data/repo/signup_repo.dart';
+import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:week3/features/auth/login/ui/login_screen.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:week3/features/onboarding/onboarding_screen.dart';
@@ -15,8 +16,15 @@ class AppRouter {
       case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => SignupCubit(getIt<SignupRepo>()),
+            create: (context) => getIt<SignupCubit>(),
             child: const SignUpScreen(),
+          ),
+        );
+      case Routes.loginScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
           ),
         );
       default:

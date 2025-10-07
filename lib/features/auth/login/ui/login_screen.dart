@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:week3/core/helpers/spacing.dart';
-import 'package:week3/features/auth/sign_up/ui/widgets/remeber_me.dart';
-import 'package:week3/features/auth/sign_up/ui/widgets/sign_up_form.dart';
-import 'package:week3/features/auth/sign_up/ui/widgets/signup_button.dart';
 import 'package:week3/features/auth/auth_headr.dart';
+import 'package:week3/features/auth/login/ui/widgets/login_button.dart';
+import 'package:week3/features/auth/login/ui/widgets/login_form.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +17,18 @@ class SignUpScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                AuthHeadr(title: 'Sign Up'),
+                AuthHeadr(
+                  title: 'Welcome',
+                  subtitle: 'Please enter your data to continue',
+                ),
                 verticalSpace(120),
-                SignUpForm(),
-                RemeberMe(),
+                LoginForm(),
               ],
             ),
           ),
         ),
       ),
-      bottomNavigationBar: SignupButton(),
+      bottomNavigationBar: LoginButton(),
     );
   }
 }

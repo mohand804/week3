@@ -19,6 +19,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyleManager.font15BlackMedium,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: controller,
       validator: validator,

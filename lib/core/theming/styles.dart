@@ -33,4 +33,19 @@ class TextStyleManager {
     fontSize: 12,
     color: ColorsManager.successGreen,
   );
+  static const TextStyle font15GrayBlueDarkRegular = TextStyle(
+    fontWeight: FontWeightHelper.regular,
+    fontSize: 15,
+    color: ColorsManager.grayBlueDark,
+  );
+  static const TextStyle font28GrayBlueDarkSemiBold = TextStyle(
+    fontWeight: FontWeightHelper.semiBold,
+    fontSize: 28,
+    color: Colors.black,
+  );
+  static const TextStyle font15BlackMedium = TextStyle(
+    fontWeight: FontWeightHelper.medium,
+    fontSize: 15,
+    color: Colors.black,
+  );
 }

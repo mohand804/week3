@@ -5,6 +5,7 @@ import 'package:week3/core/helpers/spacing.dart';
 import 'package:week3/core/theming/colors.dart';
 import 'package:week3/core/theming/styles.dart';
 import 'package:week3/core/widgets/custom_text_field.dart';
+import 'package:week3/features/auth/reactive_validation_text.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/validators.dart';
 
@@ -28,15 +29,11 @@ class _SignUpFormState extends State<SignUpForm> {
             hintText: 'Enter your username',
             controller: context.read<SignupCubit>().fullNameController,
             validator: (value) => Validators.usernameValidator(value),
-            suffixIcon: ValueListenableBuilder(
-              valueListenable: context.read<SignupCubit>().fullNameController,
-              builder: (context, value, child) {
-                final isValid =
-                    Validators.usernameValidator(value.text) == null;
-                return isValid
-                    ? Icon(Icons.check, color: ColorsManager.successGreen)
-                    : SizedBox.shrink();
-              },
+            suffixIcon: ReactiveValidationText(
+              controller: context.read<SignupCubit>().fullNameController,
+              validator: (value) => Validators.usernameValidator(value),
+              style: TextStyleManager.font12SuccessGreenRegular,
+              showIcon: true,
             ),
           ),
           verticalSpace(16),
@@ -45,18 +42,11 @@ class _SignUpFormState extends State<SignUpForm> {
             hintText: 'Enter your password',
             controller: context.read<SignupCubit>().passwordController,
             validator: (value) => Validators.passwordValidator(value),
-            suffixIcon: ValueListenableBuilder(
-              valueListenable: context.read<SignupCubit>().passwordController,
-              builder: (context, value, child) {
-                final isValid =
-                    Validators.passwordValidator(value.text) == null;
-                return isValid
-                    ? Text(
-                        'Strong',
-                        style: TextStyleManager.font12SuccessGreenRegular,
-                      )
-                    : SizedBox.shrink();
-              },
+            suffixIcon: ReactiveValidationText(
+              controller: context.read<SignupCubit>().passwordController,
+              validator: (value) => Validators.passwordValidator(value),
+              style: TextStyleManager.font12SuccessGreenRegular,
+              validMessage: 'Strong',
             ),
           ),
           verticalSpace(16),
@@ -68,14 +58,11 @@ class _SignUpFormState extends State<SignUpForm> {
             hintText: 'Enter your confirm password',
             controller: context.read<SignupCubit>().emailController,
             validator: (value) => Validators.emailValidator(value),
-            suffixIcon: ValueListenableBuilder(
-              valueListenable: context.read<SignupCubit>().emailController,
-              builder: (context, value, child) {
-                final isValid = Validators.emailValidator(value.text) == null;
-                return isValid
-                    ? Icon(Icons.check, color: ColorsManager.successGreen)
-                    : SizedBox.shrink();
-              },
+            suffixIcon: ReactiveValidationText(
+              controller: context.read<SignupCubit>().emailController,
+              validator: (value) => Validators.emailValidator(value),
+              style: TextStyleManager.font12SuccessGreenRegular,
+              showIcon: true,
             ),
           ),
           verticalSpace(16),
