@@ -8,12 +8,16 @@ import 'package:week3/features/auth/login/ui/login_screen.dart';
 import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/sign_up/ui/sign_up_screen.dart';
+import 'package:week3/features/auth/validate_otp/data/logic/cubit/validate_otp_cubit.dart';
+import 'package:week3/features/auth/validate_otp/ui/validate_otp_screen.dart';
 import 'package:week3/features/home/logic/cubit/categories_cubit.dart';
 import 'package:week3/features/home/logic/cubit/products_cubit.dart';
 import 'package:week3/features/home/ui/home_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
+    final arguments = settings.arguments;
+
     switch (settings.name) {
       case Routes.signUpScreen:
         return MaterialPageRoute(
@@ -43,6 +47,14 @@ class AppRouter {
               BlocProvider(create: (context) => getIt<LogoutCubit>()),
             ],
             child: const HomeScreen(),
+          ),
+        );
+      case Routes.validateOtpScreen:
+        final email = arguments as String? ?? '';
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<ValidateOtpCubit>(),
+            child: ValidateOtpScreen(email: email),
           ),
         );
       default:

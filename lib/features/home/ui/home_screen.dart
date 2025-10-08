@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:week3/core/helpers/spacing.dart';
-import 'package:week3/core/theming/colors.dart';
 import 'package:week3/features/home/data/model/products_requset_model.dart';
 import 'package:week3/features/home/logic/cubit/products_cubit.dart';
 import 'package:week3/features/home/ui/widget/bottom_nav_bar.dart';
