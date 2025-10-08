@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:week3/core/theming/colors.dart';
-import 'package:week3/features/auth/validate_otp/data/logic/cubit/validate_otp_cubit.dart';
+import 'package:week3/features/auth/validate_otp/logic/cubit/validate_otp_cubit.dart';
 
 class OtpInputFields extends StatefulWidget {
   const OtpInputFields({super.key});

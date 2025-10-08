@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:week3/core/helpers/spacing.dart';
 import 'package:week3/features/auth/auth_headr.dart';
-import 'package:week3/features/auth/validate_otp/ui/widgets/button.dart';
+import 'package:week3/features/auth/validate_otp/ui/widgets/verify_otp_button.dart';
 import 'package:week3/features/auth/validate_otp/ui/widgets/otp_input_fields.dart';
 import 'package:week3/features/auth/validate_otp/ui/widgets/verify_bloc_consumer.dart';
 

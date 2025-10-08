@@ -15,7 +15,7 @@ import 'package:week3/features/auth/sign_up/data/api/signup_api_service.dart';
 import 'package:week3/features/auth/sign_up/data/repo/signup_repo.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/validate_otp/data/api/validate_otp_api_service.dart';
-import 'package:week3/features/auth/validate_otp/data/logic/cubit/validate_otp_cubit.dart';
+import 'package:week3/features/auth/validate_otp/logic/cubit/validate_otp_cubit.dart';
 import 'package:week3/features/auth/validate_otp/data/repo/validate_otp_repo.dart';
 import 'package:week3/features/home/data/api/categories_api_service.dart';
 import 'package:week3/features/home/data/api/products_api_service.dart';

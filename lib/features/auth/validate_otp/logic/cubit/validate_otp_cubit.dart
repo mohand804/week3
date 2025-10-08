@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:week3/core/networking/api_result.dart';
-import 'package:week3/features/auth/validate_otp/data/logic/cubit/validate_otp_state.dart';
+import 'package:week3/features/auth/validate_otp/logic/cubit/validate_otp_state.dart';
 import 'package:week3/features/auth/validate_otp/data/model/validate_otp_requset_model.dart';
 import 'package:week3/features/auth/validate_otp/data/repo/validate_otp_repo.dart';
 

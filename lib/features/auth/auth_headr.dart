@@ -14,14 +14,17 @@ class AuthHeadr extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 45.h,
-          width: 45.w,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: ColorsManager.lightBlueGray,
+        InkWell(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            height: 45.h,
+            width: 45.w,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: ColorsManager.lightBlueGray,
+            ),
+            child: Icon(Icons.arrow_back, color: Colors.black),
           ),
-          child: Icon(Icons.arrow_back, color: Colors.black),
         ),
         verticalSpace(16),
         Center(

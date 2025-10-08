@@ -2,8 +2,8 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:week3/core/routing/routes.dart';
-import 'package:week3/features/auth/validate_otp/data/logic/cubit/validate_otp_cubit.dart';
-import 'package:week3/features/auth/validate_otp/data/logic/cubit/validate_otp_state.dart';
+import 'package:week3/features/auth/validate_otp/logic/cubit/validate_otp_cubit.dart';
+import 'package:week3/features/auth/validate_otp/logic/cubit/validate_otp_state.dart';
 
 class VerifyBlocConsumer extends StatelessWidget {
   final Widget Function(bool isLoading) child;
