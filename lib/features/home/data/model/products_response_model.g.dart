@@ -19,17 +19,6 @@ ProductsResponseModel _$ProductsResponseModelFromJson(
   hasPreviousPage: json['hasPreviousPage'] as bool,
 );
 
-Map<String, dynamic> _$ProductsResponseModelToJson(
-  ProductsResponseModel instance,
-) => <String, dynamic>{
-  'items': instance.products,
-  'page': instance.page,
-  'pageSize': instance.pageSize,
-  'totalCount': instance.totalCount,
-  'hasNextPage': instance.hasNextPage,
-  'hasPreviousPage': instance.hasPreviousPage,
-};
-
 Product _$ProductFromJson(Map<String, dynamic> json) => Product(
   (json['categories'] as List<dynamic>).map((e) => e as String).toList(),
   json['id'] as String,
@@ -49,23 +38,3 @@ Product _$ProductFromJson(Map<String, dynamic> json) => Product(
   (json['discountPercentage'] as num).toInt(),
   json['sellerId'] as String,
 );
-
-Map<String, dynamic> _$ProductToJson(Product instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'description': instance.description,
-  'productCode': instance.productCode,
-  'arabicName': instance.arabicName,
-  'arabicDescription': instance.arabicDescription,
-  'coverPictureUrl': instance.coverPictureUrl,
-  'productPictures': instance.productPictures,
-  'price': instance.price,
-  'stock': instance.stock,
-  'weight': instance.weight,
-  'color': instance.color,
-  'rating': instance.rating,
-  'reviewsCount': instance.reviewsCount,
-  'discountPercentage': instance.discountPercentage,
-  'sellerId': instance.sellerId,
-  'categories': instance.categories,
-};

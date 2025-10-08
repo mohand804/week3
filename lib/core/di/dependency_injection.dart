@@ -8,6 +8,9 @@ import 'package:week3/features/auth/login/data/repo/login_repo.dart';
 import 'package:week3/features/auth/login/data/repo/user_info_repo.dart';
 import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:week3/features/auth/login/logic/cubit/user_info_cubit.dart';
+import 'package:week3/features/auth/logout/data/api/logout_api_service.dart';
+import 'package:week3/features/auth/logout/data/repo/logout_repo.dart';
+import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/auth/sign_up/data/api/signup_api_service.dart';
 import 'package:week3/features/auth/sign_up/data/repo/signup_repo.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
@@ -50,4 +53,8 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<UserInfoRepo>(() => UserInfoRepo(getIt()));
   getIt.registerFactory<UserInfoCubit>(() => UserInfoCubit(getIt()));
+  // logout
+  getIt.registerLazySingleton<LogoutApiService>(() => LogoutApiService(dio));
+  getIt.registerLazySingleton<LogoutRepo>(() => LogoutRepo(getIt()));
+  getIt.registerFactory<LogoutCubit>(() => LogoutCubit(getIt()));
 }

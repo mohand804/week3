@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:week3/core/helpers/spacing.dart';
-import 'package:week3/core/theming/colors.dart';
 import 'package:week3/core/theming/styles.dart';
 import 'package:week3/core/widgets/custom_text_field.dart';
 import 'package:week3/features/auth/reactive_validation_text.dart';
@@ -69,13 +68,5 @@ class _SignUpFormState extends State<SignUpForm> {
         ],
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    context.read<SignupCubit>().fullNameController.dispose();
-    context.read<SignupCubit>().passwordController.dispose();
-    context.read<SignupCubit>().emailController.dispose();
-    super.dispose();
   }
 }

@@ -12,10 +12,3 @@ LoginResponseModel _$LoginResponseModelFromJson(Map<String, dynamic> json) =>
       refreshToken: json['refreshToken'] as String,
       expiresAtUtc: json['expiresAtUtc'] as String,
     );
-
-Map<String, dynamic> _$LoginResponseModelToJson(LoginResponseModel instance) =>
-    <String, dynamic>{
-      'accessToken': instance.accessToken,
-      'expiresAtUtc': instance.expiresAtUtc,
-      'refreshToken': instance.refreshToken,
-    };

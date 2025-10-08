@@ -13,7 +13,11 @@ class LazaApp extends StatelessWidget {
       designSize: const Size(375, 812),
       builder: (context, child) => MaterialApp(
         title: 'Laza App',
-        theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Raleway'),
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: 'Raleway',
+          scaffoldBackgroundColor: Colors.white,
+        ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
         initialRoute: Routes.loginScreen,

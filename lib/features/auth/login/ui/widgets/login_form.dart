@@ -49,11 +49,4 @@ class _LoginFormState extends State<LoginForm> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    context.read<LoginCubit>().emailController.dispose();
-    context.read<LoginCubit>().passwordController.dispose();
-    super.dispose();
-  }
 }

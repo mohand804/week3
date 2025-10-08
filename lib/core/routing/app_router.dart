@@ -5,18 +5,16 @@ import 'package:week3/core/routing/routes.dart';
 import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:week3/features/auth/login/logic/cubit/user_info_cubit.dart';
 import 'package:week3/features/auth/login/ui/login_screen.dart';
+import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:week3/features/home/logic/cubit/categories_cubit.dart';
 import 'package:week3/features/home/logic/cubit/products_cubit.dart';
 import 'package:week3/features/home/ui/home_screen.dart';
-import 'package:week3/features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.onBoardingScreen:
-        return MaterialPageRoute(builder: (_) => const OnboardingScreen());
       case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
@@ -42,6 +40,7 @@ class AppRouter {
               BlocProvider(
                 create: (context) => getIt<UserInfoCubit>()..getUserInfo(),
               ),
+              BlocProvider(create: (context) => getIt<LogoutCubit>()),
             ],
             child: const HomeScreen(),
           ),

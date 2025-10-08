@@ -4,21 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:week3/core/helpers/constant.dart';
 import 'package:week3/core/helpers/spacing.dart';
+import 'package:week3/core/routing/routes.dart';
 import 'package:week3/core/theming/styles.dart';
 import 'package:week3/features/auth/login/logic/cubit/user_info_cubit.dart';
 import 'package:week3/features/auth/login/logic/cubit/user_info_state.dart';
+import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/home/ui/widget/circle_container.dart';
-import 'package:week3/features/home/ui/widget/menu_row_item.dart';
+import 'package:week3/features/home/ui/widget/profile_menu_list.dart';
 
-class DrawerBody extends StatefulWidget {
+class DrawerBody extends StatelessWidget {
   const DrawerBody({super.key});
-
-  @override
-  State<DrawerBody> createState() => _DrawerBodyState();
-}
-
-class _DrawerBodyState extends State<DrawerBody> {
-  bool isDarkMode = false;
 
   @override
   Widget build(BuildContext context) {
@@ -88,66 +83,32 @@ class _DrawerBodyState extends State<DrawerBody> {
                 ],
               ),
               verticalSpace(30),
-              MenuRowItem(
-                icon: Icons.dark_mode_outlined,
-                title: 'Dark Mode',
-                trailing: Switch(
-                  value: isDarkMode,
-                  onChanged: (value) {
-                    setState(() {
-                      isDarkMode = value;
-                    });
-                  },
-                  activeTrackColor: Colors.black,
-                  inactiveThumbColor: Colors.white,
-                  inactiveTrackColor: Colors.grey.shade300,
-                ),
-                onTap: () {},
-              ),
-              MenuRowItem(
-                icon: Icons.info_outline,
-                title: 'Account Information',
-                onTap: () {},
-              ),
-              MenuRowItem(
-                icon: Icons.lock_outline,
-                title: 'Password',
-                onTap: () {},
-              ),
-              MenuRowItem(
-                icon: Icons.shopping_bag_outlined,
-                title: 'Order',
-                onTap: () {},
-              ),
-              MenuRowItem(
-                icon: Icons.credit_card_outlined,
-                title: 'My Cards',
-                onTap: () {},
-              ),
-              MenuRowItem(
-                icon: Icons.favorite_outline,
-                title: 'Wishlist',
-                onTap: () {},
-              ),
-              MenuRowItem(
-                icon: Icons.settings_outlined,
-                title: 'Settings',
-                onTap: () {},
-              ),
+              const ProfileMenuList(),
               verticalSpace(20),
               Divider(color: Colors.grey.shade300),
               verticalSpace(10),
-              Row(
-                children: [
-                  Icon(Icons.logout_outlined, color: Colors.red),
-                  horizontalSpace(10),
-                  Text(
-                    'Logout',
-                    style: TextStyleManager.font15BlackMedium.copyWith(
-                      color: Colors.red,
+              InkWell(
+                onTap: () async {
+                  await context.read<LogoutCubit>().logout();
+                  if (!context.mounted) return;
+                  await Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    Routes.loginScreen,
+                    (route) => false,
+                  );
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.logout_outlined, color: Colors.red),
+                    horizontalSpace(10),
+                    Text(
+                      'Logout',
+                      style: TextStyleManager.font15BlackMedium.copyWith(
+                        color: Colors.red,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
