@@ -3,8 +3,11 @@ import 'package:get_it/get_it.dart';
 import 'package:week3/core/networking/api_service.dart';
 import 'package:week3/core/networking/dio_factory.dart';
 import 'package:week3/features/auth/login/data/api/login_api_service.dart';
+import 'package:week3/features/auth/login/data/api/user_info_api_service.dart';
 import 'package:week3/features/auth/login/data/repo/login_repo.dart';
+import 'package:week3/features/auth/login/data/repo/user_info_repo.dart';
 import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:week3/features/auth/login/logic/cubit/user_info_cubit.dart';
 import 'package:week3/features/auth/sign_up/data/api/signup_api_service.dart';
 import 'package:week3/features/auth/sign_up/data/repo/signup_repo.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
@@ -41,4 +44,10 @@ Future<void> setupGetIt() async {
   );
   getIt.registerLazySingleton<ProductsRepo>(() => ProductsRepo(getIt()));
   getIt.registerFactory<ProductsCubit>(() => ProductsCubit(getIt()));
+  // user info
+  getIt.registerLazySingleton<UserInfoApiService>(
+    () => UserInfoApiService(dio),
+  );
+  getIt.registerLazySingleton<UserInfoRepo>(() => UserInfoRepo(getIt()));
+  getIt.registerFactory<UserInfoCubit>(() => UserInfoCubit(getIt()));
 }

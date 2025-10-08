@@ -56,7 +56,7 @@ class ApiErrorHandler {
 ApiErrorModel _handleError(dynamic data) {
   if (data is Map<String, dynamic>) {
     return ApiErrorModel(
-      message: data['message'] ?? "Unknown error occurred",
+      message: data['message'] ?? "Invalid credentials",
       statusCode: data['code'] ?? LocalStatusCodes.defaultError,
     );
   }

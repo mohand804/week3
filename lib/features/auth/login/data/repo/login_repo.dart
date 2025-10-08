@@ -1,4 +1,5 @@
 import 'package:week3/core/networking/api_error_handler.dart';
+import 'package:week3/core/networking/api_error_model.dart';
 import 'package:week3/core/networking/api_result.dart';
 import 'package:week3/features/auth/login/data/api/login_api_service.dart';
 import 'package:week3/features/auth/login/data/model/login_requset_model.dart';
@@ -11,12 +12,14 @@ class LoginRepo {
     try {
       final response = await _loginApiService.login(request);
       return ApiResult.success(response);
-    } catch (e, stackTrace) {
-      // ignore: avoid_print
-      print('❌ Error while parsing LoginResponseModel: $e');
-      // ignore: avoid_print
-      print('📌 Stack trace: $stackTrace');
-      return ApiResult.failure(ApiErrorHandler.handle(e));
+    } catch (e) {
+      final errorModel = ApiErrorHandler.handle(e);
+      return ApiResult.failure(
+        ApiErrorModel(
+          message: 'invalidCredentials',
+          statusCode: errorModel.statusCode,
+        ),
+      );
     }
   }
 }

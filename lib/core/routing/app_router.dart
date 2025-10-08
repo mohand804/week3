@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:week3/core/di/dependency_injection.dart';
 import 'package:week3/core/routing/routes.dart';
 import 'package:week3/features/auth/login/logic/cubit/login_cubit.dart';
+import 'package:week3/features/auth/login/logic/cubit/user_info_cubit.dart';
 import 'package:week3/features/auth/login/ui/login_screen.dart';
 import 'package:week3/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:week3/features/auth/sign_up/ui/sign_up_screen.dart';
@@ -38,6 +39,9 @@ class AppRouter {
                 create: (context) => getIt<CategoriesCubit>()..getCategories(),
               ),
               BlocProvider(create: (context) => getIt<ProductsCubit>()),
+              BlocProvider(
+                create: (context) => getIt<UserInfoCubit>()..getUserInfo(),
+              ),
             ],
             child: const HomeScreen(),
           ),

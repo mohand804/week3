@@ -5,6 +5,7 @@ import 'package:week3/core/helpers/spacing.dart';
 import 'package:week3/features/home/data/model/products_requset_model.dart';
 import 'package:week3/features/home/logic/cubit/products_cubit.dart';
 import 'package:week3/features/home/ui/widget/categories_bloc_builder.dart';
+import 'package:week3/features/home/ui/widget/drawer_body.dart';
 import 'package:week3/features/home/ui/widget/home_headr.dart';
 import 'package:week3/features/home/ui/widget/product_bloc_builder.dart';
 import 'package:week3/features/home/ui/widget/search_bar_with_voice_button.dart';
@@ -19,6 +20,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isDarkMode = false;
+
   @override
   void initState() {
     super.initState();
@@ -30,6 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      drawer: DrawerBody(),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),

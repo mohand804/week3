@@ -7,4 +7,5 @@ class LocalStatusCodes {
   static const sendTimeout = 1005;
   static const defaultError = 1006;
   static const nonDioError = 1007;
+  static const invalidCredentials = 400;
 }

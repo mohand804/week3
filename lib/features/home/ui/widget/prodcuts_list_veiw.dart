@@ -16,6 +16,7 @@ class ProdcutsListVeiw extends StatelessWidget {
         mainAxisSpacing: 10.h,
         crossAxisSpacing: 10.w,
       ),
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: products.length,
       itemBuilder: (context, index) =>

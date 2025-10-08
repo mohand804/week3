@@ -12,10 +12,15 @@ class HomeHeadr extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        CircleContainer(
-          child: Padding(
-            padding: EdgeInsets.all(9.w),
-            child: SvgPicture.asset('${AppConstants.svgPath}menu.svg'),
+        InkWell(
+          onTap: () {
+            Scaffold.of(context).openDrawer();
+          },
+          child: CircleContainer(
+            child: Padding(
+              padding: EdgeInsets.all(9.w),
+              child: SvgPicture.asset('${AppConstants.svgPath}menu.svg'),
+            ),
           ),
         ),
         CircleContainer(

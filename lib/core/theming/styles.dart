@@ -74,4 +74,9 @@ class TextStyleManager {
     fontSize: 13.sp,
     color: ColorsManager.darkGray,
   );
+  static TextStyle font13kGrayBlueDarkRegular = TextStyle(
+    fontWeight: FontWeightHelper.regular,
+    fontSize: 13.sp,
+    color: ColorsManager.grayBlueDark,
+  );
 }
