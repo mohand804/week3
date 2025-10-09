@@ -38,6 +38,7 @@ GET /categories – to fetch all categories
   - **Data Layer:** Contains Repositories and API Services for handling data and network requests.  
 - Implemented **dependency injection** using `get_it` for better scalability and clean structure.
 
+
 ## 📱 App Screenshots
 
 **Login Screen**  
@@ -54,8 +55,5 @@ GET /categories – to fetch all categories
 
 **Drawer Screen**  
 ![Drawer Screen](assets/screenshots/14.jpg) 
-![Logout Screen](assets/screenshots/logout.png)
 
-GET /products – to fetch all products
 
-GET /user/profile – to fetch user data for the drawer
