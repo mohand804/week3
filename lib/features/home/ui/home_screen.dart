@@ -21,11 +21,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int page = 1;
+  int pageSize = 10;
   @override
   void initState() {
     super.initState();
     context.read<ProductsCubit>().getProducts(
-      ProductsRequsetModel(page: 1, pageSize: 10),
+      ProductsRequsetModel(page: page, pageSize: pageSize),
     );
   }
 
