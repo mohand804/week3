@@ -29,7 +29,6 @@ class MenuRowItem extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 12.h),
         child: Row(
           children: [
-            // Icon container
             Container(
               width: 40.w,
               height: 40.h,
@@ -44,7 +43,6 @@ class MenuRowItem extends StatelessWidget {
               ),
             ),
             SizedBox(width: 16.w),
-            // Title text
             Expanded(
               child: Text(
                 title,
