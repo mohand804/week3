@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:week3/core/helpers/spacing.dart';
 import 'package:week3/core/theming/colors.dart';
 import 'package:week3/core/theming/styles.dart';
 
@@ -42,7 +43,7 @@ class MenuRowItem extends StatelessWidget {
                 size: 20.sp,
               ),
             ),
-            SizedBox(width: 16.w),
+            horizontalSpace(16),
             Expanded(
               child: Text(
                 title,
