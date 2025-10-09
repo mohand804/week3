@@ -38,7 +38,7 @@ A simple Flutter app (clean-style architecture) with authentication, categories/
 
 ## 🛠 Tech Stack
 - Flutter / Dart
-- Dio (HTTP client) or `http`
+- Dio (HTTP client)
 - Bloc/Cubit
 - json_serializable (for model generation)
 - get_it (DI)
