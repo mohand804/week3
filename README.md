@@ -42,18 +42,18 @@ GET /categories – to fetch all categories
 ## 📱 App Screenshots
 
 **Login Screen**  
-![Login Screen](assets/screenshots/13.jpg)
+![Login Screen](screenshots/13.jpg)
 
 **Sign Up Screen**  
-![Sign Up Screen](assets/screenshots/12.jpg)
+![Sign Up Screen](screenshots/12.jpg)
 
 **Email Verification Screen**  
-![Email Verification Screen](assets/screenshots/10.jpg)
+![Email Verification Screen](screenshots/10.jpg)
 
 **Home Screen**  
-![Home Screen](assets/screenshots/15.jpg)
+![Home Screen](screenshots/15.jpg)
 
 **Drawer Screen**  
-![Drawer Screen](assets/screenshots/14.jpg) 
+![Drawer Screen](screenshots/14.jpg) 
 
 
