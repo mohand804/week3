@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:week3/core/helpers/spacing.dart';
-import 'package:week3/core/routing/routes.dart';
 import 'package:week3/core/theming/styles.dart';
 import 'package:week3/features/auth/auth_headr.dart';
 import 'package:week3/features/auth/login/ui/widgets/dont_have_account.dart';
