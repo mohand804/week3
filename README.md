@@ -41,21 +41,19 @@ GET /categories – to fetch all categories
 ## 📱 App Screenshots
 
 **Login Screen**  
-![Login Screen](assets/screenshots/login.png)
+![Login Screen](assets/screenshots/13.jpg)
 
 **Sign Up Screen**  
-![Sign Up Screen](assets/screenshots/signup.png)
+![Sign Up Screen](assets/screenshots/12.jpg)
 
 **Email Verification Screen**  
-![Email Verification Screen](assets/screenshots/verify_email.png)
+![Email Verification Screen](assets/screenshots/10.jpg)
 
 **Home Screen**  
-![Home Screen](assets/screenshots/home.png)
+![Home Screen](assets/screenshots/15.jpg)
 
 **Drawer Screen**  
-![Drawer Screen](assets/screenshots/drawer.png)
-
-**Logout Screen**  
+![Drawer Screen](assets/screenshots/14.jpg) 
 ![Logout Screen](assets/screenshots/logout.png)
 
 GET /products – to fetch all products
