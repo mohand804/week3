@@ -41,19 +41,13 @@ GET /categories – to fetch all categories
 
 ## 📱 App Screenshots
 
-**Login Screen**  
-![Login Screen](screenshots/13.jpg)
+## 📱 App Screenshots
 
-**Sign Up Screen**  
-![Sign Up Screen](screenshots/12.jpg)
+| Login Screen | Sign Up Screen | Email Verification |
+|---------------|----------------|--------------------|
+| ![Login](screenshots/13.jpg) | ![SignUp](screenshots/12.jpg) | ![Verify](screenshots/10.jpg) |
 
-**Email Verification Screen**  
-![Email Verification Screen](screenshots/10.jpg)
-
-**Home Screen**  
-![Home Screen](screenshots/15.jpg)
-
-**Drawer Screen**  
-![Drawer Screen](screenshots/14.jpg) 
-
+| Home Screen | Drawer Screen |   |
+|--------------|----------------|---|
+| ![Home](screenshots/15.jpg) | ![Drawer](screenshots/14.jpg) |   |
 
