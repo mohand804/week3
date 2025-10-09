@@ -6,8 +6,6 @@ import 'package:week3/core/helpers/constant.dart';
 import 'package:week3/core/helpers/spacing.dart';
 import 'package:week3/core/routing/routes.dart';
 import 'package:week3/core/theming/styles.dart';
-import 'package:week3/features/auth/login/logic/cubit/user_info_cubit.dart';
-import 'package:week3/features/auth/login/logic/cubit/user_info_state.dart';
 import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/home/ui/widget/circle_container.dart';
 import 'package:week3/features/home/ui/widget/profile_menu_list.dart';
@@ -54,21 +52,6 @@ class DrawerBody extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      BlocBuilder<UserInfoCubit, UserInfoState>(
-                        builder: (context, state) {
-                          return state.maybeWhen(
-                            userInfoLoading: () => const SizedBox.shrink(),
-                            userInfoSuccess: (userInfo) => Text(
-                              userInfo.fullName,
-                              style: TextStyleManager.font17kDarkGrayMedium,
-                            ),
-                            userInfoFailure: (error) => Text(error.message),
-                            orElse: () {
-                              return const SizedBox.shrink();
-                            },
-                          );
-                        },
-                      ),
                       Row(
                         children: [
                           Text(
