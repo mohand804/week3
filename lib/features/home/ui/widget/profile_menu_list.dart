@@ -29,34 +29,13 @@ class _ProfileMenuListState extends State<ProfileMenuList> {
             inactiveThumbColor: Colors.white,
             inactiveTrackColor: Colors.grey.shade300,
           ),
-          onTap: () {},
         ),
-        MenuRowItem(
-          icon: Icons.info_outline,
-          title: 'Account Information',
-          onTap: () {},
-        ),
-        MenuRowItem(icon: Icons.lock_outline, title: 'Password', onTap: () {}),
-        MenuRowItem(
-          icon: Icons.shopping_bag_outlined,
-          title: 'Order',
-          onTap: () {},
-        ),
-        MenuRowItem(
-          icon: Icons.credit_card_outlined,
-          title: 'My Cards',
-          onTap: () {},
-        ),
-        MenuRowItem(
-          icon: Icons.favorite_outline,
-          title: 'Wishlist',
-          onTap: () {},
-        ),
-        MenuRowItem(
-          icon: Icons.settings_outlined,
-          title: 'Settings',
-          onTap: () {},
-        ),
+        MenuRowItem(icon: Icons.info_outline, title: 'Account Information'),
+        MenuRowItem(icon: Icons.lock_outline, title: 'Password'),
+        MenuRowItem(icon: Icons.shopping_bag_outlined, title: 'Order'),
+        MenuRowItem(icon: Icons.credit_card_outlined, title: 'My Cards'),
+        MenuRowItem(icon: Icons.favorite_outline, title: 'Wishlist'),
+        MenuRowItem(icon: Icons.settings_outlined, title: 'Settings'),
       ],
     );
   }
