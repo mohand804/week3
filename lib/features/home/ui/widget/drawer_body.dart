@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:week3/core/helpers/constant.dart';
 import 'package:week3/core/helpers/spacing.dart';
-import 'package:week3/core/routing/routes.dart';
-import 'package:week3/core/theming/styles.dart';
-import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/home/ui/widget/circle_container.dart';
 import 'package:week3/features/home/ui/widget/logout_button.dart';
 import 'package:week3/features/home/ui/widget/profile_menu_list.dart';
+import 'package:week3/features/home/ui/widget/verified_profile_row.dart';
 
 class DrawerBody extends StatelessWidget {
   const DrawerBody({super.key});
@@ -50,20 +47,7 @@ class DrawerBody extends StatelessWidget {
                     ),
                   ),
                   horizontalSpace(10),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Verified Profile',
-                            style: TextStyleManager.font13kGrayBlueDarkRegular,
-                          ),
-                          SvgPicture.asset('${AppConstants.svgPath}Badge.svg'),
-                        ],
-                      ),
-                    ],
-                  ),
+                  const VerifiedProfileRow(),
                 ],
               ),
               verticalSpace(30),
