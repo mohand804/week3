@@ -8,6 +8,7 @@ import 'package:week3/core/routing/routes.dart';
 import 'package:week3/core/theming/styles.dart';
 import 'package:week3/features/auth/logout/logic/cubit/logout_cubit.dart';
 import 'package:week3/features/home/ui/widget/circle_container.dart';
+import 'package:week3/features/home/ui/widget/logout_button.dart';
 import 'package:week3/features/home/ui/widget/profile_menu_list.dart';
 
 class DrawerBody extends StatelessWidget {
@@ -70,29 +71,7 @@ class DrawerBody extends StatelessWidget {
               verticalSpace(20),
               Divider(color: Colors.grey.shade300),
               verticalSpace(10),
-              InkWell(
-                onTap: () async {
-                  await context.read<LogoutCubit>().logout();
-                  if (!context.mounted) return;
-                  await Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    Routes.loginScreen,
-                    (route) => false,
-                  );
-                },
-                child: Row(
-                  children: [
-                    Icon(Icons.logout_outlined, color: Colors.red),
-                    horizontalSpace(10),
-                    Text(
-                      'Logout',
-                      style: TextStyleManager.font15BlackMedium.copyWith(
-                        color: Colors.red,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              const LogoutButton(),
             ],
           ),
         ),
