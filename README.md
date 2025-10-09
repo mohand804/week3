@@ -1,61 +1,65 @@
-🔧 Features Implemented
+# My App
 
-Implemented authentication flow including:
+A simple Flutter app (clean-style architecture) with authentication, categories/products, and a user drawer.
 
-Login
+---
 
-Sign Up
+## 🔧 Features Implemented
+- Authentication flow:
+  - Login
+  - Sign Up
+  - Email Verification
+  - Logout
+- Home screen: shows Categories and Products
+- Drawer: displays user information and navigation
 
-Email Verification
+---
 
-Logout
+## 🌐 Endpoints Used
+- `POST /auth/login` — user login
+- `POST /auth/register` — user registration
+- `POST /auth/verify-email` — email verification
+- `POST /auth/logout` — logout
+- `GET /categories` — fetch categories
+- `GET /products` — fetch products
+- `GET /user/profile` — fetch user data for the drawer
 
-Built the Home feature to display:
-
-Categories
-
-Products
-
-Created a Drawer that displays the user’s information
-
-🌐 Endpoints Used
-
-POST /auth/login – for user login
-
-POST /auth/register – for user registration
-
-POST /auth/verify-email – for email verification
-
-POST /auth/logout – for logging out the user
-
-GET /categories – to fetch all categories
+---
 
 ## 🧱 State Management & Architecture
-- Used **Bloc/Cubit** for state management.  
-- The project is organized into **three main layers**:
-  - **UI Layer:** Contains all screens and widgets responsible for the app’s interface.  
-  - **Logic Layer:** Includes all Cubits that handle the app’s state and logic.  
-  - **Data Layer:** Contains Repositories and API Services for handling data and network requests.  
-- Implemented **dependency injection** using `get_it` for better scalability and clean structure.
+- State management: **Bloc / Cubit** (all app logic lives in Cubits).  
+- Project structure (3 layers):
+  - **UI Layer** — screens & widgets  
+  - **Logic Layer** — Cubits (state & simple logic)  
+  - **Data Layer** — Repositories & API services (network requests)  
+- Dependency injection: **get_it**
+
+---
+
+## 🛠 Tech Stack
+- Flutter / Dart
+- Dio (HTTP client)
+- Bloc/Cubit
+- json_serializable (for model generation)
+- get_it (DI)
+- Clean-architecture style (3 layers)
+
+---
+
+## ▶️ How to run the app (simple)
+1. Install Flutter SDK and set up Android/iOS toolchains.  
+2. Clone the repo:
+   ```bash
+   git clone <repo-url>
+   cd <repo-folder>
 
 ## 📱 App Screenshots
 
-**Login Screen**  
-![Login Screen](assets/screenshots/13.jpg)
+| Login Screen | Sign Up Screen | Email Verification |
+|---------------|----------------|--------------------|
+| ![Login](screenshots/13.jpg) | ![SignUp](screenshots/12.jpg) | ![Verify](screenshots/10.jpg) |
 
-**Sign Up Screen**  
-![Sign Up Screen](assets/screenshots/12.jpg)
+| Home Screen | Drawer Screen |   |
+|--------------|----------------|---|
+| ![Home](screenshots/15.jpg) | ![Drawer](screenshots/14.jpg) |   |
 
-**Email Verification Screen**  
-![Email Verification Screen](assets/screenshots/10.jpg)
-
-**Home Screen**  
-![Home Screen](assets/screenshots/15.jpg)
-
-**Drawer Screen**  
-![Drawer Screen](assets/screenshots/14.jpg) 
-![Logout Screen](assets/screenshots/logout.png)
-
-GET /products – to fetch all products
-
-GET /user/profile – to fetch user data for the drawer
