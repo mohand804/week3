@@ -1,11 +1,12 @@
 class LocalStatusCodes {
-  static const connectionError = 1000;
-  static const cancel = 1001;
-  static const connectionTimeout = 1002;
-  static const unknown = 1003;
-  static const receiveTimeout = 1004;
-  static const sendTimeout = 1005;
-  static const defaultError = 1006;
-  static const nonDioError = 1007;
-  static const invalidCredentials = 400;
+  static const int ok = 200;
+  static const int found = 302;
+  static const int badRequest = 400;
+  static const int unauthorized = 401;
+  static const int forbidden = 403;
+  static const int notFound = 404;
+  static const int conflict = 409;
+  static const int internalServerError = 500;
+  static const int unprocessableEntity = 422;
+  static const int tooManyRequests = 429;
 }
