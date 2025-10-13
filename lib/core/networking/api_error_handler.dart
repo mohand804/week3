@@ -11,40 +11,40 @@ class ApiErrorHandler {
         case DioExceptionType.connectionError:
           return ApiErrorModel(
             message: "Connection to server failed",
-            statusCode: LocalStatusCodes.connectionError,
+            statusCode: LocalStatusCodes.internalServerError,
           );
         case DioExceptionType.cancel:
           return ApiErrorModel(
             message: "Request to the server was cancelled",
-            statusCode: LocalStatusCodes.cancel,
+            statusCode: LocalStatusCodes.badRequest,
           );
         case DioExceptionType.connectionTimeout:
           return ApiErrorModel(
             message: "Connection timeout with the server",
-            statusCode: LocalStatusCodes.connectionTimeout,
+            statusCode: LocalStatusCodes.badRequest,
           );
         case DioExceptionType.unknown:
           return ApiErrorModel(
             message:
                 "Connection to the server failed due to internet connection",
-            statusCode: LocalStatusCodes.unknown,
+            statusCode: LocalStatusCodes.badRequest,
           );
         case DioExceptionType.receiveTimeout:
           return ApiErrorModel(
             message: "Receive timeout in connection with the server",
-            statusCode: LocalStatusCodes.receiveTimeout,
+            statusCode: LocalStatusCodes.badRequest,
           );
         case DioExceptionType.badResponse:
           return _handleError(error.response?.data);
         case DioExceptionType.sendTimeout:
           return ApiErrorModel(
             message: "Send timeout in connection with the server",
-            statusCode: LocalStatusCodes.sendTimeout,
+            statusCode: LocalStatusCodes.badRequest,
           );
         default:
           return ApiErrorModel(
             message: "Something went wrong",
-            statusCode: LocalStatusCodes.defaultError,
+            statusCode: LocalStatusCodes.badRequest,
           );
       }
     } else {
@@ -57,7 +57,7 @@ ApiErrorModel _handleError(dynamic data) {
   if (data is Map<String, dynamic>) {
     return ApiErrorModel(
       message: data['message'] ?? "Invalid credentials",
-      statusCode: data['code'] ?? LocalStatusCodes.defaultError,
+      statusCode: data['code'] ?? LocalStatusCodes.badRequest,
     );
   }
   return ApiErrorFactory.defaultError;
