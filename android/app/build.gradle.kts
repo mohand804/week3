@@ -30,6 +30,27 @@ android {
         versionName = flutter.versionName
     }
 
+flavorDimensions "default"
+productFlavors {
+    dev {
+        dimension "default"
+        applicationIdSuffix ".dev"
+        versionNameSuffix "-dev"
+        resValue "string", "app_name", "Laza App Dev"
+    }
+    staging {
+        dimension "default"
+        applicationIdSuffix ".staging"
+        versionNameSuffix "-staging"
+        resValue "string", "app_name", "Laza App Staging"
+    }
+    prod {
+        dimension "default"
+        resValue "string", "app_name", "Laza App Prod"
+    }
+}
+
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
@@ -37,6 +58,7 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
     }
+    
 }
 
 flutter {
